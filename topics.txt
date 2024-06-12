@@ -1,0 +1,15 @@
+-rule of 7
+    -constructors, destructor, assignment ops: done
+    -handling int, string, vector, pointer: done
+    -disable constructors with delete: tbd
+    -comparison operators: tbd
+
+-regular pointers handling, especially for container
+-smart pointers
+-data structures
+-oop
+    -encapsulation
+    -inheritance
+    -polymorphism
+    -abstraction
+-templates
