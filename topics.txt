@@ -4,6 +4,8 @@
     -disable constructors with delete: tbd
     -comparison operators: tbd
 
+-add multiple mains (can be added in cmake also)
+
 -regular pointers handling, especially for container
 -smart pointers
 -data structures
