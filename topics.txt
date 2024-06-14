@@ -1,17 +1,21 @@
 -rule of 7
     -constructors, destructor, assignment ops: done
     -handling int, string, vector, pointer: done
-    -disable constructors with delete: tbd
+    -disable constructors with delete: done in pointers
     -comparison operators: tbd
 
--add multiple mains (can be added in cmake also)
+-add multiple mains (multiple executables in cmake) - DONE
 
--regular pointers handling, especially for container
--smart pointers
+-pointers
+    -regular pointers handling, especially for container - DONE
+    -smart pointers - DONE
+
 -data structures
+
 -oop
     -encapsulation
     -inheritance
     -polymorphism
     -abstraction
+
 -templates
