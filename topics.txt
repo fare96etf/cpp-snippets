@@ -1,3 +1,5 @@
+-setup clang compiler and try addresssanitizer with it
+
 -rule of 7
     -constructors, destructor, assignment ops: done
     -handling int, string, vector, pointer: done
@@ -11,6 +13,12 @@
     -smart pointers - DONE
 
 -data structures
+    -vectors - DONE
+    -deque - DONE
+    -array - DONE
+    -list and forward list - DONE
+    -set and map
+    -stack and queue
 
 -oop
     -encapsulation
@@ -19,3 +27,12 @@
     -abstraction
 
 -templates
+
+-input/output
+    -read from input and from textfile
+
+-threads
+
+-separate topics
+    -reserve() for vectors
+    -span() and data() for array
