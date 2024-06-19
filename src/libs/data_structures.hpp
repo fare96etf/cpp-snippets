@@ -8,6 +8,8 @@
 #include <iterator>
 #include <list>
 #include <forward_list>
+#include <set>
+#include <map>
 
 // dynamic contiguous array
 void try_vectors() {
@@ -139,8 +141,70 @@ void try_list_and_forwardList() {
     std::cout << "\n";
 }
 
+// associative containers
+// -set contains set of unique sorted keys, efficient insertion, removal and access (logarithmic complexity) 
+// -map contains key-value pairs with unique keys, same efficiency as set, iterate in ascending order of keys
+// -multiset and multimap allow duplicate keys
+// -unorderedset and map has their values, elements are not sorted in any particular order, but organized into buckets,
+//      which bucket an element is placed into depends entirely on the hash of its value, this allows fast access to 
+//      individual elements, since once a hash is computed, it refers to the exact bucket the element is placed into.
+//      Container elements may not be modified (even by non const iterators) since modification could 
+//      change an element's hash and corrupt the container
 void try_setmap_multisetmap_unorderedsetmap() {
+    std::cout << "SETS AND MAPS" << "\n\n";
 
+    std::set<int> s { 1, 3, 5, 7, 7 };
+    s.insert(4);
+    s.insert(6);
+    s.insert(6);
+    s.erase(1);
+
+    std::cout << "Set: ";
+    for (int n : s) {
+        std::cout << n << " ";
+    }
+    std::cout<< "\n";
+
+    s.insert(2);
+    auto it = s.find(2);
+
+    if (it != s.end()) {
+        std::cout << "There is a key in set with value: " << *it << "\n";
+    }
+
+    std::map<std::string, double> mapPrices;
+    mapPrices["T-Shirt"] = 20.00;
+    mapPrices["Sneakers"] = 100.00;
+    mapPrices["Laptop"] = 455.99;
+    mapPrices["Coffee"] = 3.2;
+    mapPrices["Ananas juice"] = 6;
+    
+    std::cout << "Map: \n";
+    for (const auto& [key, value] : mapPrices) {
+        std::cout << '[' << key << "] = " << value << "; ";
+    }
+    std::cout << '\n';
+
+    // different comparison function
+    auto compare = [](const std::string& lhs, const std::string& rhs) {
+        if (lhs.size() != rhs.size()) {
+            return lhs.size() < rhs.size(); // First compare by length
+        } else {
+            return lhs < rhs; // Then compare lexicographically
+        }
+    };
+
+    std::map<std::string, double, decltype(compare)> mapPrices2(compare);
+    for (const auto& pair : mapPrices) {
+        mapPrices2.insert(pair);
+    }
+    std::cout << "Map with new string comparison: \n";
+    for (const auto& [key, value] : mapPrices2) {
+        std::cout << '[' << key << "] = " << value << "; ";
+    }
+    std::cout << '\n';
+
+    std::cout << '\n';
 }
 
 void try_stack_queue_priorityqueue() {

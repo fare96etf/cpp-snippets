@@ -17,7 +17,7 @@
     -deque - DONE
     -array - DONE
     -list and forward list - DONE
-    -set and map
+    -set and map - DONE
     -stack and queue
 
 -oop
@@ -33,6 +33,7 @@
 
 -threads
 
--separate topics
+-separate advanced topics
     -reserve() for vectors
-    -span() and data() for array
+    -span() and data() for array, span as view
+    -flat set and map in c++23
