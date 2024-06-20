@@ -10,10 +10,12 @@
 #include <forward_list>
 #include <set>
 #include <map>
+#include <stack>
+#include <queue>
 
 // dynamic contiguous array
 void try_vectors() {
-    std::cout << "VECTORS" << std::endl << std::endl;
+    std::cout << "VECTORS" << std::endl;
 
     std::vector<int> numVec { 2, 3 };
     std::cout << "Vector size: " << numVec.size() << ", Vector capacity: " << numVec.capacity() << std::endl;
@@ -48,7 +50,7 @@ void try_vectors() {
 
 // double-ended queue that enables indexing and fast insertion and deletion at both ends
 void try_deque() {
-    std::cout << "DEQUES" << std::endl << std::endl;
+    std::cout << "DEQUES" << std::endl;
 
     std::deque<int> dq { 2, 3 };
     dq.push_front(1);
@@ -73,7 +75,7 @@ void try_deque() {
 // combines the performance and accessibility of a C-style array with the benefits of a standard container, 
 // such as knowing its own size, supporting assignment, random access iterators
 void try_array() {
-    std::cout << "ARRAYS" << "\n\n";
+    std::cout << "ARRAYS" << "\n";
 
     std::array<int, 3> a1 {2, 3, 1};
     std::sort(a1.begin(), a1.end());
@@ -98,7 +100,7 @@ void try_array() {
 // Compared to std::forward_list this container provides bidirectional iteration capability 
 // while being less space efficient
 void try_list_and_forwardList() {
-    std::cout << "LIST AND FORWARD LIST" << "\n\n";
+    std::cout << "LIST AND FORWARD LIST" << "\n";
 
     std::list<int> list1 { 2, 3, 4 };
     list1.push_front(0);
@@ -138,7 +140,7 @@ void try_list_and_forwardList() {
         std::cout << n << " ";
     }
 
-    std::cout << "\n";
+    std::cout << "\n\n";
 }
 
 // associative containers
@@ -151,7 +153,7 @@ void try_list_and_forwardList() {
 //      Container elements may not be modified (even by non const iterators) since modification could 
 //      change an element's hash and corrupt the container
 void try_setmap_multisetmap_unorderedsetmap() {
-    std::cout << "SETS AND MAPS" << "\n\n";
+    std::cout << "SETS AND MAPS" << "\n";
 
     std::set<int> s { 1, 3, 5, 7, 7 };
     s.insert(4);
@@ -207,6 +209,53 @@ void try_setmap_multisetmap_unorderedsetmap() {
     std::cout << '\n';
 }
 
-void try_stack_queue_priorityqueue() {
+// std::stack  is a container adaptor that gives the programmer the functionality of a stack (LIFO structure)
+// class template acts as a wrapper to the underlying container - only a specific set of functions is provided
+// stack pushes and pops the element from the back of the underlying container, known as the top of the stack
+// default underlying container is deque, but you can use also others, like vector
+// stacks offer efficient O(1) time complexity for push, pop, and top operations
+void try_stack() {
+    std::cout << "STACK" << "\n";
+    
+    std::stack<int> s1({ 2, 3 });
+    std::stack<std::string, std::vector<std::string>> s2({ "str1", "str2" });
 
+    s1.push(5);
+    s1.emplace(6);
+    s2.push("str3");
+
+    std::cout << "Stack1 size: " << s1.size() << ", Top element: " << s1.top() << "\n";
+    s1.pop();
+    std::cout << "Stack1 size: " << s1.size() << ", Top element: " << s1.top() << "\n";
+    std::cout << "Stack1 size: " << s2.size() << ", Top element: " << s2.top() << "\n";
+    s2.pop();
+    std::cout << "Stack1 size: " << s2.size() << ", Top element: " << s2.top() << "\n"; 
+
+    std::cout << "\n";
+}
+
+// queue is same as stack, but it is FIFO
+// priority queue provides constant time lookup of the largest element, at the expense of logarithmic insertion and extraction
+// working with a priority_queue is similar to managing a heap in some random access container, with the benefit of not being able to accidentally invalidate the heap
+void try_queue_priorityQueue() {
+    std::cout << "QUEUE AND PRIORITY QUEUE" << "\n";
+
+    std::queue<int> q1;
+    q1.push(10);
+    q1.emplace(11);
+    q1.push(4);
+
+    std::priority_queue<int> q2;
+    q2.push(3);
+    q2.emplace(8);
+    q2.push(2);
+    
+    std::cout << "Queue1 size: " << q1.size() << ", Front element: " << q1.front() << ", Back element: " << q1.back() << "\n";
+    q1.pop();
+    std::cout << "Queue1 size: " << q1.size() << ", Front element: " << q1.front() << ", Back element: " << q1.back() << "\n";
+    std::cout << "PrQueue2 size: " << q2.size() << ", Top element: " << q2.top() << "\n";
+    q2.pop();
+    std::cout << "PrQueue2 size: " << q2.size() << ", Top element: " << q2.top() << "\n";
+
+    std::cout << "\n";
 }

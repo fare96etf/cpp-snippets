@@ -18,13 +18,24 @@
     -array - DONE
     -list and forward list - DONE
     -set and map - DONE
-    -stack and queue
+    -stack and queue - DONE
+
+-utilities
+    -pair and tuple
+    -forward
+    -optional, expected (c++23), variant
+    -bitset and bit ops
 
 -oop
     -encapsulation
     -inheritance
     -polymorphism
     -abstraction
+
+-numerics
+    -random numbers
+    -complex numbers
+    -algebra
 
 -templates
 

@@ -7,7 +7,8 @@ int main(int, char**) {
     try_array();
     try_list_and_forwardList();
     try_setmap_multisetmap_unorderedsetmap();
-    try_stack_queue_priorityqueue();
+    try_stack();
+    try_queue_priorityQueue();
 
     return 0;
 }
