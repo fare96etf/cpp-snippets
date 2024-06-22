@@ -57,6 +57,9 @@ void basic_pointers() {
     //TestClass t = *myClassPtr; //not allowed because of delete
     delete myClassPtr;
 
+    // testing sanitizer, no deallocation
+    // int* numProblem = new int{2}; 
+
     std::cout << std::endl;
 }
 

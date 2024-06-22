@@ -43,7 +43,7 @@ void try_vectors() {
     std::cout << "Size after clear and popback: " << numVec.size() << std::endl;
     
     std::vector<int> numVec2 { 1, 3, 5 };
-    //auto comparisonResult = numVec <=> numVec2; //this should work in c++20
+    auto comparisonResult = numVec <=> numVec2; //this should work in c++20
 
     std::cout << std::endl;
 }

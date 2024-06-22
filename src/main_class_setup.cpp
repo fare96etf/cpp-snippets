@@ -32,7 +32,7 @@ int main(int, char**) {
     class2 = std::move(class4); //move assignment operator
     class4.display(); //text should be moved from class4
 
-    //next two examples not working because class4.ptr is nullptr
+    //next two examples not working because class4.ptr is nullptr, this can be checked and fixed
 
     //MyClass class5{class4};
     //class5.display(); //testing ptr behaviour because class4.ptr is nullptr

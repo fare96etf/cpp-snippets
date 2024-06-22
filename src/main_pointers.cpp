@@ -1,8 +1,4 @@
 #include <stdio.h>
-#include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
 #include "libs/pointers.hpp"
 
 

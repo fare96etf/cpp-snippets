@@ -1,4 +1,11 @@
+-tools
+    -https://compiler-explorer.com
+    -https://cppreference.com
+
 -setup clang compiler and try addresssanitizer with it
+    -clang is setup, but issues with sanitizer
+-setup assembly code generation
+    terminal command: g++ -S -fverbose-asm -g .\src\main_class_setup.cpp -o ./main_class_setup.s
 
 -rule of 7
     -constructors, destructor, assignment ops: done
@@ -38,6 +45,10 @@
     -algebra
 
 -templates
+    -type deduction - DONE
+    -function templates with more parameters - DONE
+    -class templates - DONE
+    -template specialization
 
 -input/output
     -read from input and from textfile
