@@ -35,10 +35,16 @@
     -bitset and bit ops
 
 -oop
-    -encapsulation
-    -inheritance
-    -polymorphism
-    -abstraction
+    -struct vs class
+    -union and variant
+    
+    -encapsulation - DONE
+    -inheritance - DONE
+    -polymorphism - DONE
+    -abstraction (virtual) - DONE
+
+-functions
+    -overloading
 
 -numerics
     -random numbers - DONE
@@ -60,3 +66,5 @@
     -reserve() for vectors
     -span() and data() for array, span as view
     -flat set and map in c++23
+    -concepts
+    -coroutines
