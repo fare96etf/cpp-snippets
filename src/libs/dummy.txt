@@ -1,0 +1,3 @@
+My name is Faris.
+I am a software engineer.
+Currenty, I am drinking coffee and writing some C code.

@@ -250,6 +250,43 @@ void basicsTest() {
 
 void handleTextTest() {
     printf("Handle Text test\n");
+
+    char fileName[] = "src/libs/dummy.txt";
+    FILE *fp;
+    fp = fopen(fileName, "w");
+
+    if (fp == NULL) {
+        printf("Error opening file!\n");
+        return;
+    }
+
+    fprintf(fp, "My name is Faris.\nI am a software engineer.\n");
+    fclose(fp);
+
+    FILE *fp1;
+    fp1 = fopen(fileName, "a");
+    fprintf(fp1, "Currenty, I am drinking coffee and writing some C code.\n");
+    fclose(fp1);
+
+    FILE *fp2;
+    fp2 = fopen(fileName, "r");
+
+    // print line by line
+    char line[100];
+    while (fgets(line, sizeof(line), fp2) != NULL) {
+        printf("%s", line);
+    }
+    printf("\n");
+    fclose(fp2);
+
+    FILE *fp3;
+    fp3 = fopen(fileName, "r");
+    // print char by char
+    char ch;
+    while ((ch = fgetc(fp3)) != EOF) {
+        printf("%c", ch);
+    }
+    fclose(fp3);
 }
 
 int main() {
