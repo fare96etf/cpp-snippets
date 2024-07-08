@@ -10,6 +10,7 @@ add_executable(CppTestDataStructures src/main_data_structures.cpp)
 add_executable(CppTestTemplates src/main_templates.cpp)
 add_executable(CppTestNumerics src/main_numerics.cpp)
 add_executable(CppTestOop src/main_oop.cpp)
+add_executable(CppTestC src/main_c.c)
 
 # set (CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fsanitize=address")
 # set (CMAKE_LINKER_FLAGS_DEBUG "${CMAKE_LINKER_FLAGS_DEBUG} -fsanitize=address")
