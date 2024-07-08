@@ -194,12 +194,72 @@ void preProcessorTest() {
     #endif
 }
 
+void basicsTest() {
+    printf("Basics test\n");
+
+    // arrays basics
+    int arr[3];
+    printf("Enter three integers: ");
+    scanf("%d %d %d", &arr[0], &arr[1], &arr[2]);
+    printf("You entered: %d, %d, %d\n", arr[0], arr[1], arr[2]);
+
+    int arr1[5] = {10, 20, 30, 40, 50};
+    for (int i = 0; i < 5; ++i) {
+        printf("Element at index %d: %d\n", i, arr1[i]);
+    }
+
+    // string (array of chars) basics
+    char dest[20];
+    char src[] = "Hello";
+    strcpy(dest, src);
+
+    char conc[] = ", World!";
+    strcat(dest, conc);
+
+    printf("String length: %d\n", strlen(dest));
+    int compRes = strcmp(dest, "Hello, World!");
+    printf("String comparison result: %d\n", compRes);
+    int num = atoi("100");
+    printf("String conversion result: %d\n", num);
+    
+    char buffer[50];
+    int num1 = 123;
+    sprintf(buffer, "The number is %d", num1);
+    printf("String buffer: %d\n", buffer);
+
+    // casting
+    double d;
+    int di = 5;
+    d = (double)di;
+    d += 0.2;
+    printf("Casting double value: %lf\n", d);
+
+    // bitwise operations
+    int res1 = 4 | 1; // or
+    printf("Bitwise res1: %d\n", res1);
+    unsigned int res2 = ~255; // not
+    printf("Bitwise res2: %d\n", res2);
+    int res3 = 1 << 3; // left shift
+    printf("Bitwise res3: %d\n", res3);
+
+    unsigned int flags = 0b00000100; // flags with 3rd bit set to 1
+    // Set the 2nd bit (index 1) to 1
+    flags |= (1 << 1);
+    printf("Flags after setting 2nd bit: %u\n", flags);
+}
+
+void handleTextTest() {
+    printf("Handle Text test\n");
+}
+
 int main() {
     //memoryAllocTest();
     //structUnionTest();
-    preProcessorTest();
+    //preProcessorTest();
+    //basicsTest();
+    handleTextTest();
 
     return 0;
 }
 
-// create linked list
+// data structures: create linked list, stack, queue, tree, graph, hash table
